@@ -1,0 +1,37 @@
+Hola, buen día
+
+El proyecto hace la gestión / conexión de la base de datos en MySQL con Visual Studio por medio de XAMPP 
+se utiliza la configuaración de fabrica del programa XAMPP para la conexión:
+
+        "server = 127.0.0.1; Database = parqueadero_lot_db; User Id=root; password="
+
+                                    ó
+
+        "server = 127.0.0.1; Port = 3308; Database = parqueadero_lot_db; User Id=root; password="
+
+Instrucciones
+
+1) Descargar XAMPP: https://sourceforge.net/projects/xampp/files/
+
+2) Para instalar solo abrir el archivo que descargaste y darle aceptar y a todo "Siguiente" o "Next".
+2.1) Si cuando se le da Start a MySQL suelta un error, ejercutar XAMPP como administrador.
+2.2) Una vez en la interfaz de XAMPP ir donde esta ubicado MySQL y clickear en Config-my.ini y cambiar todos los 3306 por "3308" tambien borrar el your_password dejar vacio ese campo luego del (=) Atención (Cambiar los puertos de 3306 a 3308 solo si no deja darle a iniciar (Start) en XAMPP)
+
+3) Abrir la base de datos en MySQL
+
+4) Realizar una conexión en MySQL dandole su nombre y en Hostname: 127.0.0.1 / Port: 3306 /o/ Port: 3308 / Username: root / lo demas dejarlo como esta.
+4.1) Entrar en el esquema (Schema) del modelo de la base de datos: "parqueadero_lot_db" cuando se muestren las tablas de manera graficas los cuadrados conectandose con lineas, presionar Database arriba y Forward Engineer.
+4.1.1) Seleccionar la conexión que creamos anteriormente darle Next, marcar las dos opciones que dicen Skip que estan de primeras y tambien la que dice Disable FK, darle a Next hasta finalizar por ultimo Close.
+4.2) Abrir la conexión en MySQL y abrir Schemas ubicado a la izquierda del programa y verificar si esta: parqueadero_lot_db
+
+5) Presionar Start en XAMPP y iniciar el programa en visual studio 
+5.1) Si el puerto se cambio de 3306 a 3308 en el programa al inicio del boton btningresar y btnregistrar cambiar el codigo por este: 
+
+MySqlConnection conn = new MySqlConnection("server = 127.0.0.1; Port = 3308; Database = parqueadero_lot_db; User Id=root; password=");
+
+==========================================================================================================================
+En esta carpeta se encuentra:
+1- "Schema" de la base de datos DB
+2- El Script SQL de la base de datos
+3- El proyecto Dise-o-master (Parking Lot) // Ya funciona el Login de Usuarios y el Registro de Usuarios.
+
